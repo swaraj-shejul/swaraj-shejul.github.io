@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Swaraj Shejul — AI Engineer | Generative AI | RAG | Agentic AI</title>
+<meta name="description" content="Swaraj Shejul — AI Engineer in Pune focused on Generative AI, LLM applications, RAG, Agentic AI, Python, and practical AI systems." />
+<meta name="theme-color" content="#050714" />
+<meta property="og:title" content="Swaraj Shejul — AI Engineer" />
+<meta property="og:description" content="AI Engineer focused on Generative AI, LLM applications, RAG, Agentic AI, Python, and practical AI systems." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://github.com/swaraj-shejul" />
+<link rel="canonical" href="https://github.com/swaraj-shejul" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2357bdda'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='17' font-weight='700' fill='%23050714' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+<div class="bg-math" aria-hidden="true">
+  <span class="eq eq-1">∇<i>L</i>(θ) = −∑ <i>y</i> log(<i>ŷ</i>)</span>
+  <span class="eq eq-2">σ(<i>z</i>) = 1 / (1 + <i>e</i><sup>−<i>z</i></sup>)</span>
+  <span class="eq eq-3">θ<sub>t+1</sub> = θ<sub>t</sub> − η ∇<i>L</i>(θ<sub>t</sub>)</span>
+  <span class="eq eq-4">Attention(<i>Q,K,V</i>) = softmax(<i>QK</i><sup>⊤</sup>/√<i>d<sub>k</sub></i>) <i>V</i></span>
+  <span class="eq eq-5"><i>H</i>(<i>p,q</i>) = −∑ <i>p</i><sub>i</sub> log <i>q</i><sub>i</sub></span>
+  <span class="eq eq-6"><i>p</i>(<i>y</i>∣<i>x</i>) = softmax(<i>Wx</i> + <i>b</i>)</span>
+  <span class="eq eq-7">ELBO = 𝔼<sub>q</sub>[log <i>p</i>(<i>x</i>∣<i>z</i>)] − KL(<i>q</i> ‖ <i>p</i>)</span>
+  <span class="eq eq-8">ReLU(<i>x</i>) = max(0, <i>x</i>)</span>
+  <span class="eq eq-9"><i>L</i> = ½ ‖<i>y</i> − <i>X</i>θ‖²</span>
+  <span class="eq eq-10"><i>ŷ</i> = arg max <i>P</i>(<i>y</i>∣<i>x</i>; θ)</span>
+  <span class="eq eq-11"><i>F</i><sub>1</sub> = 2·<i>PR</i> / (<i>P</i>+<i>R</i>)</span>
+  <span class="eq eq-12">cos(<i>u,v</i>) = <i>u</i>·<i>v</i> / (‖<i>u</i>‖‖<i>v</i>‖)</span>
+  <span class="eq eq-13"><i>D</i><sub>KL</sub>(<i>p</i>‖<i>q</i>) = ∑ <i>p</i>(<i>x</i>) log <i>p</i>(<i>x</i>)/<i>q</i>(<i>x</i>)</span>
+  <span class="eq eq-14"><i>z</i> = μ + σ ⊙ ε,  ε ∼ 𝒩(0,<i>I</i>)</span>
+</div>
+<div class="cursor-glow"></div>
+<div class="scroll-progress"></div>
+
+<!-- ================ NAV ================ -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">M</span>
+      <span>Swaraj Shejul</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" data-target="about" href="#about">about</a>
+      <a class="nav-link" data-target="skills" href="#skills">skills</a>
+      <a class="nav-link" data-target="experience" href="#experience">experience</a>
+      <a class="nav-link" data-target="projects" href="#projects">projects</a>
+      <a class="nav-link" data-target="education" href="#education">education</a>
+      <a class="nav-link" data-target="contact" href="#contact">contact</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ================ MOBILE MENU ================ -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav class="mobile-menu-inner">
+    <a class="m-link" data-target="about" href="#about"><span class="idx">01</span><span>about</span><span class="m-arrow">→</span></a>
+    <a class="m-link" data-target="skills" href="#skills"><span class="idx">02</span><span>skills</span><span class="m-arrow">→</span></a>
+    <a class="m-link" data-target="experience" href="#experience"><span class="idx">03</span><span>experience</span><span class="m-arrow">→</span></a>
+    <a class="m-link" data-target="projects" href="#projects"><span class="idx">04</span><span>projects</span><span class="m-arrow">→</span></a>
+    <a class="m-link" data-target="education" href="#education"><span class="idx">05</span><span>education</span><span class="m-arrow">→</span></a>
+    <a class="m-link" data-target="contact" href="#contact"><span class="idx">06</span><span>contact</span><span class="m-arrow">→</span></a>
+    <div class="m-channels">
+      <a href="mailto:swarajaiengineer@gmail.com">email</a>
+      <a href="https://www.linkedin.com/in/swaraj-shejul" target="_blank" rel="noopener">linkedin</a>
+      <a href="https://github.com/swaraj-shejul" target="_blank" rel="noopener">github</a>
+    </div>
+  </nav>
+</div>
+
+<!-- ================ HERO ================ -->
+<section id="about" class="hero" data-screen-label="01 Hero">
+  <a id="top"></a>
+  <canvas id="hero-bg-canvas" aria-hidden="true"></canvas>
+  <div class="hero-orb"></div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-status">
+          <span class="avatar">MA</span>
+          <span>Swaraj Shejul</span>
+          <span class="sep">/</span>
+          <span>Pune, India</span>
+          <span class="ring"></span>
+        </div>
+
+        <div class="hero-name mono">GENERATIVE AI · RAG · AGENTIC AI · PYTHON</div>
+
+        <h1 class="hero-headline">
+          <span class="line"><span>Building</span></span>
+          <span class="line"><span><em>practical AI</em> systems</span></span>
+          <span class="line"><span>with LLMs &amp; agents</span></span>
+          <span class="line"><span><em>that solve real problems.</em></span></span>
+        </h1>
+
+        <div class="hero-subline">
+          <span class="arrow">▸</span>
+          <span data-typed>AI Engineer</span>
+          <span class="typed-cursor"></span>
+        </div>
+
+        <p class="hero-desc">
+          I build practical AI applications with Python, Generative AI, LLMs, RAG, and Agentic AI.
+          My work combines machine learning, NLP, OCR, retrieval, and multi-step agent workflows.
+          <span class="scramble" data-scramble="Focused on building useful AI systems.">Focused on building useful AI systems.</span>
+        </p>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#contact">
+            Let's build something
+            <span class="btn-arrow">↗</span>
+          </a>
+          <a class="btn btn-ghost" href="#projects">
+            See selected work
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="num" data-value="3+">0</div>
+            <div class="lbl">Years at Infosys</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num" data-value="1">0</div>
+            <div class="lbl">Featured AI project</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num" data-value="1">0</div>
+            <div class="lbl">AI certification</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num" data-value="4">0</div>
+            <div class="lbl">AI layers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-chip chip-1"><span class="dot"></span>LLM · RAG workflow</div>
+        <div class="hero-chip chip-2"><span class="dot violet"></span>LangGraph agent</div>
+        <div class="hero-chip chip-3"><span class="dot mint"></span>ChromaDB · vectors</div>
+        <div class="hero-chip chip-4"><span class="dot amber"></span>FastAPI · Python ✓</div>
+
+        <div class="console">
+          <div class="console-head">
+            <div class="console-dots"><span></span><span></span><span></span></div>
+            <div class="console-title">swaraj@ai-dev · <b>~/healthcare-ai</b></div>
+            <div class="console-tag"><span class="pip"></span>DEMO</div>
+          </div>
+
+          <div class="console-metrics">
+            <div class="metric-cell">
+              <div class="lbl">WORKFLOW SIGNAL</div>
+              <div class="val"><span id="m-tps">1284</span> <span class="arrow">↑</span></div>
+              <svg class="spark" id="spark-1" viewBox="0 0 50 18" preserveAspectRatio="none"></svg>
+            </div>
+            <div class="metric-cell">
+              <div class="lbl">RESPONSE SIGNAL</div>
+              <div class="val"><span id="m-lat">142</span><span class="unit">ms</span> <span class="arrow down">↓</span></div>
+              <svg class="spark" id="spark-2" viewBox="0 0 50 18" preserveAspectRatio="none"></svg>
+            </div>
+            <div class="metric-cell">
+              <div class="lbl">AI LAYERS</div>
+              <div class="val"><span id="m-mod">07</span></div>
+              <svg class="spark" id="spark-3" viewBox="0 0 50 18" preserveAspectRatio="none"></svg>
+            </div>
+            <div class="metric-cell">
+              <div class="lbl">API SIGNAL</div>
+              <div class="val"><span id="m-req">3.4</span><span class="unit">k</span> <span class="arrow">↑</span></div>
+              <svg class="spark" id="spark-4" viewBox="0 0 50 18" preserveAspectRatio="none"></svg>
+            </div>
+          </div>
+
+          <div class="console-net">
+            <span class="net-label tl"><span style="color:var(--cyan)">●</span> ai.workflow</span>
+            <span class="net-label tr" id="loss-readout">workflow · active</span>
+            <canvas id="hero-canvas" aria-hidden="true"></canvas>
+            <span class="net-label bl">ARCH · <span class="arch-num">3</span> - <span class="arch-num">5</span> - <span class="arch-num">6</span> - <span class="arch-num">5</span> - <span class="arch-num">3</span></span>
+            <span class="net-label br" id="epoch-readout">epoch 142/∞</span>
+          </div>
+
+          <div class="console-log" id="terminal-body"></div>
+
+          <div class="console-foot">
+            <span class="seg ok"><span class="lbl">●</span><span class="v">healthy</span></span>
+            <span class="seg"><span class="lbl">region</span><span class="v">us-east-1</span></span>
+            <span class="seg"><span class="lbl">build</span><span class="v">v3.2.1</span></span>
+            <span class="grow"></span>
+            <span class="seg"><span class="lbl">uptime</span><span class="v uptime" id="m-uptime">142h 38m</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <span class="rail"></span>
+  </div>
+</section>
+
+<!-- ================ MARQUEE ================ -->
+<div class="marquee-wrap" aria-label="Core technologies">
+  <div class="marquee-track">
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/python.png" alt=""/>Python</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/scikitlearn.png" alt=""/>Machine Learning</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/langchain.png" alt=""/>LangChain</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/langgraph.png" alt=""/>LangGraph</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/chromadb.png" alt=""/>ChromaDB</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/fastapi.png" alt=""/>FastAPI</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/azure.png" alt=""/>Azure AI</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/docker.png" alt=""/>Docker</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/python.png" alt=""/>Python</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/scikitlearn.png" alt=""/>Machine Learning</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/langchain.png" alt=""/>LangChain</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/langgraph.png" alt=""/>LangGraph</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/chromadb.png" alt=""/>ChromaDB</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/fastapi.png" alt=""/>FastAPI</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/azure.png" alt=""/>Azure AI</span>
+    <span class="marquee-item"><img loading="lazy" decoding="async" src="assets/skills/docker.png" alt=""/>Docker</span>
+  </div>
+</div>
+
+<!-- ================ SKILLS ================ -->
+<section id="skills" class="section-pad" data-screen-label="02 Skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="section-tag"><span class="square"></span>02 / Toolkit</div>
+        <h2>The stack behind <span class="gradient">practical AI</span></h2>
+      </div>
+      <div class="section-meta">AI · GenAI · Agentic AI · Python</div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-stack">
+        <div class="skill-card reveal">
+          <div class="skill-card-head"><h3><span class="dot-icon"></span>Programming &amp; ML</h3><span class="num">/ 07</span></div>
+          <div class="skill-list">
+            <span class="skill-chip"><img loading="lazy" decoding="async" src="assets/skills/python.png" alt=""/>Python</span>
+            <span class="skill-chip"><img loading="lazy" decoding="async" src="assets/skills/scikitlearn.png" alt=""/>Scikit-learn</span>
+            <span class="skill-chip"><img loading="lazy" decoding="async" src="assets/skills/tensorflow.png" alt=""/>TensorFlow</span>
+            <span class="skill-chip">XGBoost</span><span class="skill-chip">LightGBM</span><span class="skill-chip">PyTorch</span><span class="skill-chip">SHAP</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-1">
+          <div class="skill-card-head violet"><h3><span class="dot-icon"></span>Generative AI &amp; LLMs</h3><span class="num">/ 08</span></div>
+          <div class="skill-list">
+            <span class="skill-chip">Generative AI</span><span class="skill-chip">LLMs</span><span class="skill-chip">Prompt Engineering</span><span class="skill-chip">RAG</span>
+            <span class="skill-chip">Embeddings</span><span class="skill-chip">Hugging Face</span><span class="skill-chip"><img loading="lazy" decoding="async" src="assets/skills/langchain.png" alt=""/>LangChain</span><span class="skill-chip"><img loading="lazy" decoding="async" src="assets/skills/langgraph.png" alt=""/>LangGraph</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-2">
+          <div class="skill-card-head mint"><h3><span class="dot-icon"></span>NLP, OCR &amp; AI</h3><span class="num">/ 07</span></div>
+          <div class="skill-list">
+            <span class="skill-chip">NLP</span><span class="skill-chip">NER</span><span class="skill-chip">OCR</span><span class="skill-chip">IndicBERT</span><span class="skill-chip">MuRIL</span><span class="skill-chip">PaddleOCR</span><span class="skill-chip">TrOCR</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal reveal-delay-3">
+          <div class="skill-card-head amber"><h3><span class="dot-icon"></span>AI Application Development</h3><span class="num">/ 08</span></div>
+          <div class="skill-list">
+            <span class="skill-chip"><img loading="lazy" decoding="async" src="assets/skills/fastapi.png" alt=""/>FastAPI</span><span class="skill-chip"><img loading="lazy" decoding="async" src="assets/skills/chromadb.png" alt=""/>ChromaDB</span>
+            <span class="skill-chip"><img loading="lazy" decoding="async" src="assets/skills/azure.png" alt=""/>Azure AI</span><span class="skill-chip"><img loading="lazy" decoding="async" src="assets/skills/docker.png" alt=""/>Docker</span><span class="skill-chip"><img loading="lazy" decoding="async" src="assets/skills/linux.png" alt=""/>Linux</span><span class="skill-chip">REST APIs</span><span class="skill-chip">Git</span><span class="skill-chip">GitHub</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="orbit-card reveal reveal-delay-2">
+        <div class="label-top"><span>// CORE_LOOP</span><span style="color:var(--cyan)">● active</span></div>
+        <div class="title-mid">AI workflow</div>
+        <div class="orbit-stage">
+          <div class="orbit-ring r3"></div><div class="orbit-ring r2"></div><div class="orbit-ring r1"></div>
+          <div class="orbit-core">AI</div>
+          <div class="orbit-node" data-ring="0.55" data-angle="0"><img loading="lazy" decoding="async" src="assets/skills/python.png" alt=""/></div>
+          <div class="orbit-node" data-ring="0.55" data-angle="120"><img loading="lazy" decoding="async" src="assets/skills/langchain.png" alt=""/></div>
+          <div class="orbit-node" data-ring="0.55" data-angle="240"><img loading="lazy" decoding="async" src="assets/skills/langgraph.png" alt=""/></div>
+          <div class="orbit-node r2" data-ring="0.78" data-angle="30"><img loading="lazy" decoding="async" src="assets/skills/fastapi.png" alt=""/></div>
+          <div class="orbit-node r2" data-ring="0.78" data-angle="100"><img loading="lazy" decoding="async" src="assets/skills/chromadb.png" alt=""/></div>
+          <div class="orbit-node r2" data-ring="0.78" data-angle="170"><img loading="lazy" decoding="async" src="assets/skills/azure.png" alt=""/></div>
+          <div class="orbit-node r2" data-ring="0.78" data-angle="240"><img loading="lazy" decoding="async" src="assets/skills/tensorflow.png" alt=""/></div>
+          <div class="orbit-node r2" data-ring="0.78" data-angle="310"><img loading="lazy" decoding="async" src="assets/skills/docker.png" alt=""/></div>
+          <div class="orbit-node r3" data-ring="1.0" data-angle="15"><span>RAG</span></div>
+          <div class="orbit-node r3" data-ring="1.0" data-angle="75"><span>LLM</span></div>
+          <div class="orbit-node r3" data-ring="1.0" data-angle="135"><span>NLP</span></div>
+          <div class="orbit-node r3" data-ring="1.0" data-angle="195"><span>OCR</span></div>
+          <div class="orbit-node r3" data-ring="1.0" data-angle="255"><span>ML</span></div>
+          <div class="orbit-node r3" data-ring="1.0" data-angle="315"><span>Agents</span></div>
+        </div>
+        <div class="label-top" style="margin-top:auto;"><span>core_layers = 4</span><span>ML · AI · GenAI · Agents</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ EXPERIENCE ================ -->
+<section id="experience" class="section-pad" data-screen-label="03 Experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="section-tag"><span class="square"></span>03 / Track record</div><h2>Enterprise IT foundation, <span class="gradient">AI transition</span></h2></div>
+      <div class="section-meta">Senior System Engineer · Jun 2022 - Nov 2025</div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div><div class="tl-row">
+          <div class="tl-period">2024 - 2025<div><span class="badge">● AI/ML</span></div></div>
+          <div class="tl-body"><h3>Senior System Engineer</h3><div class="company">Infosys Limited · Income Tax Project · AI/ML Responsibilities</div>
+            <p>Worked under senior AI/ML team members on backend data gathering, EDA, preprocessing, and AI use cases for identifying anomalies, risks, and irregularities in tax filings. Supported document/image processing workflows using OCR, NER, and classification approaches.</p>
+            <div class="tl-tech"><span>Python</span><span>Pandas</span><span>NumPy</span><span>Azure AI</span><span>NLP</span><span>OCR</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal reveal-delay-1">
+        <div class="tl-dot"></div><div class="tl-row">
+          <div class="tl-period">2023 - 2024<div><span class="badge">● PROCESS</span></div></div>
+          <div class="tl-body"><h3>Lean Team Coordination</h3><div class="company">Infosys Limited · Income Tax Project</div>
+            <p>Collaborated with infrastructure teams to identify repetitive workflows and opportunities for automation and AI. Gathered requirements, analyzed processes, and supported action plans for automation and AI-powered solutions.</p>
+            <div class="tl-tech"><span>Automation</span><span>Process Improvement</span><span>Python</span><span>Shell</span><span>AI Use Cases</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tl-item reveal reveal-delay-2">
+        <div class="tl-dot"></div><div class="tl-row">
+          <div class="tl-period">JUN 2022 - 2023<div><span class="badge">● SYSTEMS</span></div></div>
+          <div class="tl-body"><h3>Linux Administration</h3><div class="company">Infosys Limited · Income Tax Project</div>
+            <p>Managed Linux servers, user access, monitoring, troubleshooting, log analysis, security activities, and production support. Automated repetitive operational tasks using Shell scripting and Python, reducing manual effort by approximately 30%.</p>
+            <div class="tl-tech"><span>Linux</span><span>Shell Scripting</span><span>Python</span><span>Monitoring</span><span>Production Support</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ PROJECTS ================ -->
+<section id="projects" class="section-pad" data-screen-label="04 Projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="section-tag"><span class="square"></span>04 / Featured project</div><h2>One platform, <span class="gradient">four AI layers</span></h2></div>
+      <div class="section-meta">ML · AI · GenAI · Agentic AI</div>
+    </div>
+
+    <div class="projects-stack">
+      <article class="project-card tint-cyan reveal">
+        <div class="project-img-wrap">
+          <span class="project-cat">Healthcare AI</span><span class="project-num">01</span>
+          <img loading="lazy" decoding="async" src="assets/projects/project-3.png" alt="AI healthcare project preview" />
+        </div>
+        <div class="project-body">
+          <h3>AI-Powered Smart Patient Card &amp; Healthcare Assistant</h3>
+          <div class="project-metrics">
+            <div class="project-metric"><span class="v gradient">ML</span><span class="l">Urgency classification</span></div>
+            <div class="project-metric"><span class="v gradient">GenAI</span><span class="l">RAG + LLM workflows</span></div>
+            <div class="project-metric"><span class="v gradient">Agents</span><span class="l">LangGraph workflows</span></div>
+          </div>
+          <p>A unified healthcare assistant combining symptom triage, multilingual NLP, prescription OCR, RAG-based summaries, and agentic safety workflows.</p>
+          <ul class="project-feature-list">
+            <li><strong>ML:</strong> XGBoost/LightGBM urgency classifier with engineered labels and SHAP explainability.</li>
+            <li><strong>AI:</strong> IndicBERT/MuRIL-based symptom NLP with NER plus PaddleOCR/TrOCR for printed prescriptions.</li>
+            <li><strong>GenAI:</strong> RAG-based Doctor Summary Generator and multilingual Patient Card Generator with Pydantic validation and hallucination guardrails.</li>
+            <li><strong>Agentic AI:</strong> LangGraph Symptom Intake Agent for dynamic follow-up questions and a Safety Checker workflow for drug-interaction and symptom-history consistency checks.</li>
+          </ul>
+          <div class="project-tech">
+            <span>Python</span><span>XGBoost / LightGBM</span><span>NLP</span><span>OCR</span><span>RAG</span><span>LangGraph</span><span>FastAPI</span><span>Pydantic</span>
+          </div>
+          <a class="project-link" href="https://github.com/swaraj-shejul" target="_blank" rel="noopener">view on github →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================ EDUCATION ================ -->
+<section id="education" class="section-pad" data-screen-label="05 Education">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="section-tag"><span class="square"></span>05 / Education</div><h2>Foundation, certification, <span class="gradient">continuous learning</span></h2></div>
+      <div class="section-meta">2021 · AI-900 · ongoing AI learning</div>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-short">B.Tech</div><h3>B.Tech in Electronics and Information Technology</h3>
+        <div class="inst">National Institute of Electronics &amp; Information Technology (NIELIT), Chhatrapati Sambhajinagar</div>
+        <div class="meta"><span>2021</span><span>Electronics &amp; Information Technology</span></div>
+      </div>
+      <div class="edu-card current reveal reveal-delay-1">
+        <div class="edu-short">AI-900</div><h3>Microsoft Certified: Azure AI Fundamentals</h3>
+        <div class="inst">Microsoft</div><div class="meta"><span>2026</span><span class="highlight">★ AI Fundamentals Certification</span></div>
+      </div>
+      <div class="edu-card reveal reveal-delay-2">
+        <div class="edu-short">AI</div><h3>Generative AI &amp; Agentic AI Learning</h3>
+        <div class="inst">Current professional development</div><div class="meta"><span>Python → ML → GenAI → Agentic AI</span><span>LLMs · RAG · LangChain · LangGraph</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ PUBLICATIONS / ACHIEVEMENTS ================ -->
+<section id="publications" class="section-pad" style="padding-top:0;" data-screen-label="06 Achievements">
+  <div class="container">
+    <div class="section-head reveal">
+      <div><div class="section-tag"><span class="square"></span>06 / Achievements</div><h2>Recognition &amp; <span class="gradient">milestones</span></h2></div>
+      <div class="section-meta">Infosys · Microsoft · AI transition</div>
+    </div>
+
+    <div class="pub-list">
+      <div class="pub-item reveal"><div class="type">Award</div><div><h3>RISE Awards — Rookie of the Quarter</h3><div class="venue">Infosys</div><div class="authors">Recognition for performance, contribution, and initiative</div></div><div class="read">Infosys</div></div>
+      <div class="pub-item reveal reveal-delay-1"><div class="type">Hackathon</div><div><h3>Automation &amp; Lean Hackathon</h3><div class="venue">Infosys</div><div class="authors">Participated in enterprise automation and process-improvement initiatives</div></div><div class="read">Automation</div></div>
+      <div class="pub-item reveal reveal-delay-2"><div class="type">Role</div><div><h3>Lean Team Coordinator</h3><div class="venue">Infosys · Income Tax Project</div><div class="authors">Selected to support automation, process improvement, and AI use-case identification</div></div><div class="read">AI / Lean</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ CONTACT ================ -->
+<section id="contact" class="section-pad" style="padding-top:40px;" data-screen-label="07 Contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <div class="availability">
+        <span class="ring"></span>
+        OPEN TO AI ENGINEERING OPPORTUNITIES · 2026
+      </div>
+      <h2>Building the next <em>AI system?</em></h2>
+      <p>Open to AI Engineer opportunities, GenAI application work, RAG systems, and Agentic AI projects.</p>
+      <div class="contact-meta">
+        <div class="item"><span class="v mint">AI</span><span class="l">Target role</span></div>
+        <div class="item"><span class="v">Pune · India</span><span class="l">Based in</span></div>
+        <div class="item"><span class="v">Remote</span><span class="l">Open to</span></div>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:swarajaiengineer@gmail.com">
+          swarajaiengineer@gmail.com
+          <span class="btn-arrow">↗</span>
+        </a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/swaraj-shejul" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/swaraj-shejul" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <div class="contact-channels">
+        <a href="mailto:swarajaiengineer@gmail.com"><span class="label">email ·</span>swarajaiengineer@gmail.com</a>
+        <a href="https://www.linkedin.com/in/swaraj-shejul" target="_blank" rel="noopener"><span class="label">linkedin ·</span>/in/swaraj-shejul</a>
+        <a href="https://github.com/swaraj-shejul" target="_blank" rel="noopener"><span class="label">github ·</span>/swaraj-shejul</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ FOOTER ================ -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="signature">
+      <span class="ping"></span>
+      <span>© 2026 SWARAJ SHEJUL · CRAFTED IN PUNE</span>
+    </div>
+    <div>BUILT WITH HTML · CSS · &lt;3 - NO FRAMEWORKS</div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -359,22 +359,22 @@
     <div class="projects-stack">
       <article class="project-card tint-cyan reveal">
         <div class="project-img-wrap">
-          <span class="project-cat">Healthcare AI</span><span class="project-num">01</span>
+          <span class="project-cat">MediPlus AI</span><span class="project-num">01</span>
           <img loading="lazy" decoding="async" src="assets/projects/smart-patient-card-workflow.png" alt="AI healthcare project preview" />
         </div>
         <div class="project-body">
-          <h3>AI-Powered Smart Patient Card &amp; Healthcare Assistant</h3>
+          <h3>MediPlus AI: Patient Urgency Triage System &amp; Healthcare Assistant</h3>
           <div class="project-metrics">
             <div class="project-metric"><span class="v gradient">ML</span><span class="l">Urgency classification</span></div>
-            <div class="project-metric"><span class="v gradient">GenAI</span><span class="l">RAG + LLM workflows</span></div>
-            <div class="project-metric"><span class="v gradient">Agents</span><span class="l">LangGraph workflows</span></div>
+            <div class="project-metric"><span class="v gradient">Naive Bayes</span><span class="l">Likely diseases</span></div>
           </div>
-          <p>A unified healthcare assistant combining symptom triage, multilingual NLP, prescription OCR, RAG-based summaries, and agentic safety workflows.</p>
+          <p>A triage system that takes a patient’s age and symptoms and flags the case as Emergency, See Doctor Soon or Home Care, helping small clinics and families decide how urgently care is needed.</p>
           <ul class="project-feature-list">
-            <li><strong>ML:</strong> XGBoost/LightGBM urgency classifier with engineered labels and SHAP explainability.</li>
-            <li><strong>AI:</strong> IndicBERT/MuRIL-based symptom NLP with NER plus PaddleOCR/TrOCR for printed prescriptions.</li>
-            <li><strong>GenAI:</strong> RAG-based Doctor Summary Generator and multilingual Patient Card Generator with Pydantic validation and hallucination guardrails.</li>
-            <li><strong>Agentic AI:</strong> LangGraph Symptom Intake Agent for dynamic follow-up questions and a Safety Checker workflow for drug-interaction and symptom-history consistency checks.</li>
+            <li> Engineered urgency labels for 246,945 cases using ESI-inspired clinical rules.</li>
+            <li> The LightGBM model catches 92.49% of emergencies (recall) with 86.11% accuracy on a 49,389-case test set.</li>
+            <li> SHAP shows which symptoms drove each result.</li>
+            <li> Added a Naive Bayes model that ranks likely diseases among 773 conditions as supporting information.</li>
+            <li> Deployed as a FastAPI service in Docker on AWS EC2 with HTTPS and a web UI:  <a href="https://mediplusai.duckdns.org/ui">MediPlus AI</a></li>
           </ul>
           <div class="project-tech">
             <span>Python</span><span>XGBoost / LightGBM</span><span>NLP</span><span>OCR</span><span>RAG</span><span>LangGraph</span><span>FastAPI</span><span>Pydantic</span>
